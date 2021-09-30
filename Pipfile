@@ -4,6 +4,9 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+pytest = "*"
+coverage = "*"
+pytest-cov = "*"
 
 [dev-packages]
 pytest = "*"
