@@ -51,4 +51,27 @@ def crea_dict(path_archivo:str):
         d = dict(zip(encabezadoF,reg))
         dict_rows.append(d)
 
-    return dict_rows
+    return dict_rows,reg
+
+def crea_lista(path_archivo:str):
+    with open(path_archivo,"r") as p:
+        # data_csv = csv.DictReader(p)
+        # for linea in data_csv.fieldnames:
+        #    print(linea)
+        encabezado = p.readline()
+        encabezadov = encabezado.strip()
+        lineas = p.readlines()
+        # print(p.tell())
+        encabezadoF = encabezadov.split(',')
+
+    dict_rows = []
+    for linea in lineas:
+        lineav = linea.strip()
+        reg = lineav.split(',')
+        # if len(reg) != len(encabezadoF):
+        #     raise Exception("invalid CSV")
+        # d = dict(zip(encabezadoF,reg))
+        # dict_rows.append(d)
+
+    return reg
+
